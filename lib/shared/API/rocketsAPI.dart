@@ -10,7 +10,7 @@ Future<List<dynamic>> getAllRocketsList() async {
     var _response = await http.get(_uri);
     if (_response.statusCode == 200) {
       var list = jsonDecode(_response.body);
-      return list.map((order) => RocketInfoModel.fromJson(order)).toList();
+      return list.map((rocket) => RocketInfoModel.fromJson(rocket)).toList();
     }
   } catch (error) {
     print(error);
